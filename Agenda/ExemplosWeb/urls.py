@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
-from ExemplosWeb.views import homepage, homeSec , registro, secreto,MeuUpdateView
+from ExemplosWeb.views import homepage, homeSec , registro,MeuUpdateView
 from django.contrib.auth.views import LoginView , LogoutView
 from django.urls.base import reverse_lazy
 from django.contrib.auth.views import PasswordChangeView,PasswordChangeDoneView
@@ -34,7 +34,6 @@ urlpatterns = [
     path('accounts/',homeSec,name='sec-home'),
     path('accounts/registro/',registro, name = 'sec-registro'),
     path('accounts/login/',LoginView.as_view(template_name='registro/login.html'),name = 'sec-login'),
-    path('secreto/',secreto, name='sec-secreta'),
     path('logout/', LogoutView.as_view(next_page=reverse_lazy('sec-login'),), name='sec-logout'),
     path('accounts/password_change/',PasswordChangeView.as_view(template_name='registro/password_change_form.html',success_url=reverse_lazy('sec-password_change_done'),), name = 'sec-troca-senha'),
     path('accounts/senhaTrocada/',PasswordChangeDoneView.as_view(template_name='registro/password_change_done'), name = 'sec-senha-trocada'),

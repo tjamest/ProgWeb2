@@ -4,16 +4,14 @@ em uma página HTML use:
 { % include 'contatos/links.html' % }
 -->
 <a href="/">
-    Home-Page
-</a> |
-<a href="{% url 'Filmes:home-review' %}">
-    Página inicial
+    Página principal
 </a> |
 <a href="{% url 'Filmes:lista-review' %}">
-    Listar reviews
+    Lista de reviews
 </a> |
 <a href="{% url 'Filmes:cria-review' %}">
     Cria review
 </a> |
+<a href='{%url "sec-logout" %}'>Logout</a>
 
 <hr>

@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.urls.conf import path
 from Filmes import views
+from django.contrib.auth import views as auth_views
 app_name = "Filmes"
 urlpatterns = [
 path('cria/', views.FilmeReviewCreate.as_view(),name='cria-review'),

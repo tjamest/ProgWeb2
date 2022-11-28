@@ -27,17 +27,13 @@ def registro(request):
         formulario = UserCreationForm(request.POST)
         if formulario.is_valid():
             formulario.save()
-            return redirect('sec-home')
+            return redirect('/')
         else:
             return render(request,'registro/registro.html', {'form': formulario, })
     else:
         formulario = UserCreationForm()
         return render(request,'registro/registro.html', {'form': formulario, })
 
-
-@login_required
-def secreto(request):
-    return render(request, "particular/paginaSecreta.html")
 
 
 class MeuUpdateView(UpdateView):

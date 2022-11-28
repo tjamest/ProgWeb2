@@ -5,37 +5,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Lista de resenhas</title>
-    <link rel="stylesheet" href="{% static 'Filmes/css/estilo.css' %}">
+    <link rel="stylesheet" href="{% static 'contatos/css/listaReview.css' %}">
 </head>
 
 <body>
     {% include 'Filmes/linksHeader.html' %}
-    <h1>Lista de resenhas</h1>
-    <h6>listaResenhas.html</h6>
-    <table>
-        <tr>
-            <th>Nome</th>
-            <th>Filme</th>
-            <th>Review</th>
-            <th>Nota</th>
-        </tr>
-        {% for review in reviews %}
-        <tr>
-            <td>{{ review.nome }}</td>
-            <td>{{review.filme }}</td>
-            <td>{{ review.review }}</td>
-            <td>{{ review.nota }}</td>
-            <td>
+    <div class="content">
+        <h1>Lista de resenhas</h1>
+        <table class="styled-table">
+            <thead> 
+                <tr class="table-header">
+                    <th>Filme</th>
+                    <th>Review</th>
+                    <th>Nota</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody> 
+                {% for review in reviews %}
+                <tr>
+                    <td>{{review.filme }}</td>
+                    <td>{{ review.review }}</td>
+                    <td>{{ review.nota }}</td>
+                    <td>
                 <a href="{% url 'Filmes:atualiza-review' pk=review.id %}">Atualizar</a> |
                 <a href="{% url 'Filmes:apaga-review' pk=review.id %}">Excluir</a>
             </td>
         </tr>
         {% empty %}
         <tr>
-            <th colspan="5">Ainda não tem resenhas cadastradas</th>
+            <td colspan="5">Ainda não tem resenhas cadastradas</td>
         </tr>
         {% endfor %}
-    </table>
+    </tbody> 
+</table>
+</div>
 </body>
 
 </html>

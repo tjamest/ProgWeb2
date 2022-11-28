@@ -4,21 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Atualiza review</title>
-    <link rel="stylesheet" href="{% static 'Filmes/css/estilo.css' %}">
+    <link rel="stylesheet" href="{% static 'contatos/css/form.css' %}">
     
 </head>
 <body>
-    {% include 'Filme/linksHeader.html' %}
+    {% include 'Filmes/linksHeader.html' %}
   <h1>Atualização de review</h1>
   <form method="POST" class='formulario'>
     {% csrf_token %}
     <table>
-      {{ resenha.as_table }}
-        <tr>
-          <td></td>
-          <td><input type="submit" value="Atualiza"></td>
-        </tr>
+      {{ review.as_table }}
     </table>
   </form>
+  <input type="submit" value="Atualiza" class="button">
 </body>
 </html>

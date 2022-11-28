@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Home page exemplo</h1>
+    <h1>Pagina Inicial</h1>
 
     <p>
         Bem vindo usuário
@@ -17,15 +17,17 @@
         <br> <br/>
         {{hora}}:{{minuto}}
     </p>
-    
+    {%if user.is_authenticated %}
     <p>
 
         <ul>
             <li><a href="{% url 'Filmes:home-review' %}" style = "text-decoration: none;" >Clique aqui  </a> para ir para suas resenhas </li>
 
-            </li><a href="{% url 'sec-home' %}" style = "text-decoration: none;" >Clique aqui  </a> para ir para home </li>
         </ul>
     </p>
+    {% else %}
+        <a href="{% url 'sec-login' %}">Clique aqui para fazer Login</a>
+    {% endif %}
 
 </body>
 
