@@ -7,16 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'contatos/css/estilo.css' %}">
+    <link rel="stylesheet" href="{% static 'Filmes/css/estilo.css' %}">
 </head>
 <body>
-    {% include 'contatos/links.html' %}
+    {% include 'Filmes/linksHeader.html' %}
         <form action="" method="post" class="formulario">
             {% csrf_token %}
             <table>
                 {{ formulario.as_table }}
             </table>
-            <input type="submit" value="Cria1Contato">
+            <input type="submit" value="criaResenha">
         </form>
 </body>
 </html>

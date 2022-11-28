@@ -29,7 +29,7 @@ from django.contrib.auth.models import User
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("contatos/", include ('contatos.urls')),
+    path("Filmes/", include ('Filmes.urls')),
     path('',homepage,name = 'tela-inicial'),
     path('accounts/',homeSec,name='sec-home'),
     path('accounts/registro/',registro, name = 'sec-registro'),

@@ -5,9 +5,6 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import UpdateView
 
 
-
-
-
 def homepage(request):
     agora = datetime.now()
     relogio = {

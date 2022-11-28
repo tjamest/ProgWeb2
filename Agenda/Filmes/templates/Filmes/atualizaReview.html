@@ -3,17 +3,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Atualiza Contatos</title>
-    <link rel="stylesheet" href="{% static 'contatos/css/estilo.css' %}">
+    <title>Atualiza review</title>
+    <link rel="stylesheet" href="{% static 'Filmes/css/estilo.css' %}">
     
 </head>
 <body>
-    {% include 'contatos/links.html' %}
-  <h1>Atualização de contatos</h1>
+    {% include 'Filme/linksHeader.html' %}
+  <h1>Atualização de review</h1>
   <form method="POST" class='formulario'>
     {% csrf_token %}
     <table>
-      {{ pessoa.as_table }}
+      {{ resenha.as_table }}
         <tr>
           <td></td>
           <td><input type="submit" value="Atualiza"></td>
